@@ -2,9 +2,9 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Language and Environment */
-    "target": "es2016", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "target": "ESNext", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     /* Modules */
-    "module": "commonjs", /* Specify what module code is generated. */
+    "module": "ESNext", /* Specify what module code is generated. */
     "rootDir": "./src", /* Specify the root folder within your source files. */
     "declaration": true, /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     "outDir": "./dist", /* Specify an output folder for all emitted files. */
@@ -52,10 +52,13 @@
     // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "jsx": "react",
+    "moduleResolution": "bundler"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

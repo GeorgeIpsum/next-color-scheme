@@ -1,7 +1,11 @@
 import type { Header } from "next/dist/lib/load-custom-routes";
 
-export const headers = async (headerFn?: () => Promise<Header[]>): Promise<Header[]> => {
-  return [
+const defaultHeaderFn = () => Promise.resolve([] as Header[]);
+
+export const withNextHeaders = (
+  headerFn: () => Promise<Header[]> = defaultHeaderFn,
+): (() => Promise<Header[]>) => {
+  return async () => [
     {
       source: "/(.*)",
       headers: [
@@ -19,6 +23,6 @@ export const headers = async (headerFn?: () => Promise<Header[]>): Promise<Heade
         },
       ],
     },
-    ...(await headerFn?.()) ?? [],
-  ]
+    ...(await headerFn()),
+  ];
 };
