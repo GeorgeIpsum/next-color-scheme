@@ -71,7 +71,7 @@ export default async function RootLayout(
 
 This library is most beneficial when combining the app directory with Tailwind, where you need to set some selector somewhere in your root layout so that Tailwind classes can pick up your color-scheme as Next streams HTML to the client.
 
-1. If you haven't already, set up a dark mode selector in either your `globals.css` (Tailwind 4) or your `tailwind.config.ts` (Tailwind <=3>)
+1. If you haven't already, set up a dark mode selector in either your `globals.css` (Tailwind 4) or your `tailwind.config.ts` (Tailwind <=3)
 
 > Using `tailwind.config.ts` ([Tailwind 3](https://v3.tailwindcss.com/docs/dark-mode))
 ```ts

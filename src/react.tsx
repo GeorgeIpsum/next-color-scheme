@@ -84,7 +84,23 @@ export const ThemeProvider: React.FC<
 
   return (
     <ErrorBoundary
-      errorComponent={ErrorComponent ?? (() => <div>WHOOPSIE!!!!!</div>)}
+      errorComponent={
+        ErrorComponent ??
+        (({ error, reset }) => (
+          <section>
+            <h1>Something went wrong.</h1>
+            <p>{error.message}</p>
+            <button
+              onClick={() => {
+                reset?.();
+                setTheme(theme);
+              }}
+            >
+              Reset
+            </button>
+          </section>
+        ))
+      }
     >
       <ThemeContext.Provider value={{ theme, setTheme }}>
         {children}
